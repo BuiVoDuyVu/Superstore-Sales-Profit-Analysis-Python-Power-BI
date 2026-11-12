@@ -1,0 +1,31 @@
+// Reference formulas for Power BI Desktop.
+// Assumes the prepared transaction table is named Superstore.
+// Add each definition separately through Modeling > New measure.
+// Currency: format Total Sales, Total Profit, and Average Order Value as USD.
+
+Total Sales =
+SUM(Superstore[Sales])
+
+Total Profit =
+SUM(Superstore[Profit])
+
+// Format as Percentage, 2 decimal places. Returns 0 for zero revenue.
+Profit Margin =
+DIVIDE([Total Profit], [Total Sales], 0)
+
+// An order may contain multiple product lines.
+Total Orders =
+DISTINCTCOUNT(Superstore[Order ID])
+
+Total Quantity =
+SUM(Superstore[Quantity])
+
+// Counts transaction lines, not distinct orders.
+Loss-Making Lines =
+CALCULATE(
+    COUNTROWS(Superstore),
+    Superstore[Profit] < 0
+)
+
+Average Order Value =
+DIVIDE([Total Sales], [Total Orders], 0)

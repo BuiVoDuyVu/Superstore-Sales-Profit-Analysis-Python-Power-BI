@@ -1,0 +1,36 @@
+# Local environments and Python caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Operating system and temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.log
+
+# Original local working copies; curated versions are tracked in the folders below
+/Superstore_Option1_Starter/
+/Power_BI.pbix
+/Bao_cao_do_an_Superstore_Option1.pdf
+
+# Power BI local cache / recovery files
+*.pbix.autosave
+*.pbi/cache.abf
+*.pbi/localSettings.json
+*.pbi/editorSettings.json
